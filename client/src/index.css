@@ -2,10 +2,41 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1368px;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+select {
+  box-shadow: none !important;
+  border-color: rgb(255, 204, 0) !important;
+  border-radius: 50px !important;
+  text-align: center;
+  font-weight: 600 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(248, 162, 65);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 136, 0);
 }

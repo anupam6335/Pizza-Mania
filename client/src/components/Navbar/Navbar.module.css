@@ -132,7 +132,9 @@ img {
   color: var(--title-color);
   font-weight: 600;
 }
-
+.nav__logo:hover {
+  color: #E49D1A;
+}
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
@@ -152,6 +154,7 @@ img {
 
 .nav__list, 
 .nav__link {
+  margin-top: .35rem;
   display: flex;
 }
 
@@ -162,7 +165,10 @@ img {
   color: var(--title-color);
   font-weight: 600;
 }
-
+.nav__link:hover {
+  /* color: var(--first-color); */
+  color: #E49D1A;
+}
 .nav__list {
   justify-content: space-around;
 }
@@ -237,7 +243,8 @@ img {
     /* display: block; */ /* Minimalist design, visible labels */
   }
   .nav__link:hover {
-    color: var(--first-color);
+    /* color: var(--first-color); */
+    color: #E49D1A;
   }
 
   /* First design, remove if you choose the minimalist design */
