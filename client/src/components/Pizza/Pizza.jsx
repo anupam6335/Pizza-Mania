@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { Modal } from "react-bootstrap";
 import styles from "./Pizza.module.css";
-// import { addToCart } from "../actions/cartActions";
 
 const Pizza = ({ pizza }) => {
   const [quantity, setquantity] = useState(1);
   const [varient, setvarient] = useState("small");
-  //   function addtocart() {
-  //     dispatch(addToCart(pizza, quantity, varient));
-  //   }
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div className={`container ${styles.pizza__container}`}>
       <div className={`${styles.pizza__container} grid`}>
         <article className={`${styles.pizza__card}`}>
-          <img
+          <img  onClick={handleShow}
             src={pizza.image}
             alt=""
             className={`${styles.pizza__img}`}
@@ -22,7 +23,7 @@ const Pizza = ({ pizza }) => {
           <h3 className={`${styles.pizza__name}`}>{pizza.name}</h3>
           <div className={`${styles.pizza__vq_container}`}>
             <div className={`w-100`}>
-              <span>Varients</span>
+              <h6 className={`${styles.mb}`}>Varients</h6>
 
               <select
                 className={`form-control ${styles.var__select}`}
@@ -37,7 +38,7 @@ const Pizza = ({ pizza }) => {
               </select>
             </div>
             <div className={`w-100 ${styles.quan}`}>
-              <span>Quantity</span>
+              <h6 className={`${styles.mb}`}>Quantity</h6>
 
               <select
                 className="form-control"
@@ -53,7 +54,6 @@ const Pizza = ({ pizza }) => {
             </div>
           </div>
 
-          {/* <span className="pizza__description">{pizza.description}</span> */}
 
           <div className={`flex-container ${styles.pizza__btnprice_container}`}>
             <div className="m-1 w-100">
@@ -68,6 +68,22 @@ const Pizza = ({ pizza }) => {
             </div>
           </div>
         </article>
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{pizza.name}</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <img src={pizza.image} className={`img-fluid ${styles.modal__img}`} style={{height:'400px'}}/>
+          <p>{pizza.description}</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <button className="btn" onClick={handleClose}>
+            CLOSE
+          </button>
+        </Modal.Footer>
+      </Modal>
       </div>
     </div>
   );

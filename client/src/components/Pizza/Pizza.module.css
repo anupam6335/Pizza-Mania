@@ -10,6 +10,9 @@
 .pizza__name {
   font-size: 1.25rem;
   color: rgba(28, 21, 21, 0.818);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .pizza__vq_container {
   display: flex;
@@ -35,6 +38,7 @@
 }
 
 .pizza__img {
+  cursor: pointer;
   transition: transform 0.4s;
 }
 
@@ -71,12 +75,18 @@
 .quan {
   margin-left: 20px;
 }
+.mb {
+  margin-bottom: 5px;
+}
 
+.modal__img {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 @media screen and (max-width: 850px) {
   .pizza__container{
     margin-left: 1rem;
     /* margin-top: -5rem; */
-  }
-  .pizza__card {
   }
 }
