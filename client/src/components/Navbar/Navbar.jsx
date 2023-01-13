@@ -12,7 +12,7 @@ const Navbar = () => {
         <nav className={`${styles.nav} ${styles.container}`}>
           <div className={`${styles.center}`}>
             <img src="assets/pizzaMania.png" alt="" />
-            <a href="#" className={`${styles.nav__logo}`}>
+            <a href="/" className={`${styles.nav__logo}`}>
               Pizza Mania
             </a>
           </div>
@@ -20,22 +20,21 @@ const Navbar = () => {
             <ul className={`${styles.nav__list}`}>
               <li className={`${styles.nav__item}`}>
                 {/* <a href="#home" className={`${styles.nav__link} ${styles.active__link}`}> */}
-                <a href="#home" className={`${styles.nav__link}`}>
+                <a href="/" className={`${styles.nav__link}`}>
                   <i className="bx bx-home-alt nav__icon"></i>
                   <span className={`${styles.nav__name}`}>Home</span>
                 </a>
               </li>
 
               <li className={`${styles.nav__item}`}>
-                <a href="#about" className={`${styles.nav__link}`}>
-                  <i className="bx bx-cart-alt">{cartstate.cartItems.length}</i>
-
+                <a href="/cart" className={`${styles.nav__link}`}>
+                  <i className="bx bx-shopping-bag">{cartstate.cartItems.length}</i>
                   <span className={`${styles.nav__name}`}>Cart   </span>
                 </a>
               </li>
 
               <li className={`${styles.nav__item}`}>
-                <a href="#skills" className={`${styles.nav__link}`}>
+                <a href="/login" className={`${styles.nav__link}`}>
                   <i className="bx bx-log-in-circle"></i>
                   <span className={`${styles.nav__name}`}>Login</span>
                 </a>
