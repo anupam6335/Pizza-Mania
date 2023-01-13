@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import { getAllPizzasReducer } from './reducers/pizzaReducers'
 import { cartReducer } from './reducers/cartReducer'
+import { registerUserReducer } from './reducers/userReducer'
 
 
 const finalReducer = combineReducers({
@@ -18,6 +19,7 @@ const initialState = {
     cartReducer : {
        cartItems: cartItems
     },
+    registerUserReducer: registerUserReducer
     // loginUserReducer :{
     //     currentUser : currentUser
     // }

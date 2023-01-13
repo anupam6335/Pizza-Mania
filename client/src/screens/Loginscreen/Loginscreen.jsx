@@ -14,7 +14,7 @@ const Loginscreen = () => {
                   <input type="email" placeholder="email" />
                 </div>
                 <div className={`${styles.inputBox}`}>
-                  <input type="password" placeholder="Password" />
+                  <input type="password" placeholder="password" />
                 </div>
 
                 <div className={`${styles.inputBox}`}>
