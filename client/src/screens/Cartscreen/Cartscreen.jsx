@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./Cartscreen.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../../actions/cartActions";
+import { addToCart, deleteFromCart } from "../../actions/cartActions";
 
 const Cartscreen = () => {
   const cartstate = useSelector((state) => state.cartReducer);
   const cartItems = cartstate.cartItems;
   var subtotal = cartItems.reduce((x, item) => x + item.price, 0);
-  var constDelivery = Math.floor(Math.random() * (50 - 10) + 30);
+  var costDelivery = 49;
+  const dispatch = useDispatch()
   return (
     <div classNameName={`container ${styles.cart__screen}`}>
       <section
@@ -62,6 +63,7 @@ const Cartscreen = () => {
                               className="btn btn-danger btn-sm mb-2"
                               data-mdb-toggle="tooltip"
                               title="Remove item"
+                              onClick={()=>{dispatch(deleteFromCart(item))}}
                             >
                               <i className="bx bxs-box"></i>
                             </button>
@@ -76,7 +78,7 @@ const Cartscreen = () => {
                             >
                               <button
                                 className={`btn px-3 me-2 ${styles.quan__min}`}
-                                //   onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                onClick={()=>{dispatch(addToCart(item , item.quantity-1 , item.varient))}}
                               >
                                 <i className="bx bx-minus-circle"></i>
                               </button>
@@ -88,7 +90,7 @@ const Cartscreen = () => {
                                   id="form1"
                                   min="0"
                                   name="quantity"
-                                  value="1"
+                                  value={item.quantity}
                                   type="number"
                                   className={`form-control ${styles.quan__input}`}
                                 />
@@ -102,7 +104,7 @@ const Cartscreen = () => {
 
                               <button
                                 className={`btn px-3 me-2 ${styles.quan__plus}`}
-                                //   onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                onClick={()=>{dispatch(addToCart(item , item.quantity+1 , item.varient))}}
                               >
                                 <i className="bx bx-plus-circle"></i>
                               </button>
@@ -142,7 +144,7 @@ const Cartscreen = () => {
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Delivery cost
-                      <span> {constDelivery} ₹</span>
+                      <span> {subtotal ? costDelivery : 0} ₹</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                       <div>
@@ -152,7 +154,7 @@ const Cartscreen = () => {
                         </strong>
                       </div>
                       <span>
-                        <strong>{subtotal + constDelivery} ₹</strong>
+                        <strong>{ subtotal ? subtotal += costDelivery : 0} ₹</strong>
                       </span>
                     </li>
                   </ul>
