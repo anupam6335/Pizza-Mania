@@ -13,7 +13,8 @@ body {
 
 select {
   box-shadow: none !important;
-  border-color: rgb(255, 204, 0) !important;
+  /* border-color: rgb(255, 204, 0) !important; */
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important;
   border-radius: 50px !important;
   text-align: center;
   font-weight: 600 !important;
@@ -39,4 +40,15 @@ select {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(255, 136, 0);
+}
+
+
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: #E49D1A;
+}
+
+::selection {
+  color: #fff;
+  background: #E49D1A;
 }

@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "./Navbar.module.css";
+import { useSelector, useDispatch } from "react-redux";
+
 const Navbar = () => {
+
+  const cartstate = useSelector((state) => state.cartReducer);
+
   return (
     <>
       <header className={`${styles.header}`} id="header">
@@ -23,9 +28,9 @@ const Navbar = () => {
 
               <li className={`${styles.nav__item}`}>
                 <a href="#about" className={`${styles.nav__link}`}>
-                  <i className="bx bx-cart-alt"></i>
+                  <i className="bx bx-cart-alt">{cartstate.cartItems.length}</i>
 
-                  <span className={`${styles.nav__name}`}>Cart</span>
+                  <span className={`${styles.nav__name}`}>Cart   </span>
                 </a>
               </li>
 

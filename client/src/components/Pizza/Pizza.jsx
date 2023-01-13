@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
+import {useDispatch} from 'react-redux'
 import styles from "./Pizza.module.css";
+import { addToCart } from "../../actions/cartActions";
 
 const Pizza = ({ pizza }) => {
   const [quantity, setquantity] = useState(1);
@@ -9,6 +11,14 @@ const Pizza = ({ pizza }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const dispatch = useDispatch()
+
+  function addtocart()
+  {
+    console.log('add to cart clicked')
+    dispatch(addToCart(pizza , quantity , varient))
+  }
+
   return (
     <div className={`container ${styles.pizza__container}`}>
       <div className={`${styles.pizza__container} grid`}>
@@ -41,7 +51,7 @@ const Pizza = ({ pizza }) => {
               <h6 className={`${styles.mb}`}>Quantity</h6>
 
               <select
-                className="form-control"
+                className={`form-control ${styles.var__select}`}
                 value={quantity}
                 onChange={(e) => {
                   setquantity(e.target.value);
@@ -62,7 +72,7 @@ const Pizza = ({ pizza }) => {
               </h1>
             </div>
             <div className="m-1 w-100">
-              <button className={`${styles.add__to_cart}`}>
+              <button className={`${styles.add__to_cart}`} onClick={addtocart}>
                 <i className="bx bx-shopping-bag"></i>
               </button>
             </div>
