@@ -49,6 +49,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
+  
   color: var(--text-color);
 }
 
@@ -95,6 +96,7 @@ img {
   left: 0;
   width: 100%;
   background-color: var(--container-color);
+  background: #eff0f4 !important;
   z-index: var(--z-fixed);
   transition: .4s;
 }

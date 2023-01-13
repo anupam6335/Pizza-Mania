@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 import { Navbar } from "./components/allComp";
-import { Homescreen, Cartscreen } from "./screens/allScreens";
+import { Homescreen, Cartscreen, Registerscreen, Loginscreen } from "./screens/allScreens";
 
 function App() {
   return (
@@ -11,6 +11,8 @@ function App() {
       <BrowserRouter>
         <Route path="/" exact component={Homescreen} />
         <Route path="/cart" exact component={Cartscreen} />
+        <Route path="/register" exact component={Registerscreen} />
+        <Route path="/login" exact component={Loginscreen} />
       </BrowserRouter>
     </div>
   );

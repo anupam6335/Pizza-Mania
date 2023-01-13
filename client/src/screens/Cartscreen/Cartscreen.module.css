@@ -119,3 +119,12 @@
 .pizza__btn:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
+
+
+@media screen and (max-width: 781px) {
+  .cart__screen_section {
+    margin-top: -2rem;
+    margin-left: -1rem;
+    margin-right: 1rem;
+}
+}
