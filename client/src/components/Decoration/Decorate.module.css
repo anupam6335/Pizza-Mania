@@ -1,0 +1,61 @@
+.loader__screen {
+  margin-top: 5rem;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 175px;
+  height: 175px;
+  border: 25px solid #dddddd;
+  border-top-color: #f2be58;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+.error__div {
+    position: relative;
+    margin-top: 5rem;
+}
+.error__div h2 {
+    position: absolute;
+    font-size: 3rem;
+    color: rgba(88, 87, 87, 0.284);
+    top: -80px;
+    left: 24rem;
+    margin-top: -15rem;
+    margin-left: -20rem;
+}
+.error {
+    margin-left: 20rem;
+    background: url('../../../public/assets/error.gif') no-repeat;
+    width: 50rem;
+    height: 30rem;
+}
+
+.success__message {
+  margin-top: 3rem;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

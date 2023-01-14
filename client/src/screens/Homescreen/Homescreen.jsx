@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllPizzas } from "../../actions/pizzaActions";
 import styles from "./Homescreen.module.css";
 import Pizza from "../../components/Pizza/Pizza";
+import Loading from "../../components/Decoration/Loading";
+import Error from "../../components/Decoration/Error";
 
 const Homescreen = () => {
   const dispatch = useDispatch();
@@ -19,9 +21,9 @@ const Homescreen = () => {
     <div className={`container ${styles.home__screen}`}>
       <div className="row">
         {loading ? (
-          <h1>Loading... 🤔🤔</h1>
+          <Loading/>
         ) : error ? (
-          <h1>Something went wrong 😢😢😢</h1>
+          <Error error={'something went wrong ☹️☹️'}/>
         ) : (
           pizzas.map((pizza) => {
             return (

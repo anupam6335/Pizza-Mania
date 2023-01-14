@@ -1,22 +1,84 @@
 import React, { useState } from "react";
 import styles from "./Registerscreen.module.css";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { registerUser } from "../../actions/userActions";
+import Loading from "../../components/Decoration/Loading";
+import Success from "../../components/Decoration/Success";
+import Error from "../../components/Decoration/Error";
+import { toast } from "react-hot-toast";
+
 const Registerscreen = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
+  const registerstate = useSelector((state) => state.registerUserReducer);
+  const { error, loading, success } = registerstate;
+  const dispatch = useDispatch();
   function register(e) {
     e.preventDefault();
-    if (password != cpassword) {
-      alert("passwords not matched");
+    if(!name) {
+      toast("Enter your name please", {
+        icon: "😊",
+        style: {
+          borderRadius: "10px",
+          background: "#0B6623",
+          color: "#fff",
+        },
+      });
+      return;
+    }
+    else if(!email || !email.includes('@') || !email.includes('.com')) {
+      toast("Enter your email please", {
+        icon: "😊",
+        style: {
+          borderRadius: "10px",
+          background: "#0B6623",
+          color: "#fff",
+        },
+      });
+      return;
+    }
+    else if(!password) {
+      toast("Enter your password", {
+        icon: "😊",
+        style: {
+          borderRadius: "10px",
+          background: "#0B6623",
+          color: "#fff",
+        },
+      });
+      return;
+    }
+    else if (password != cpassword) {
+      // alert("passwords not matched");
+      toast("passwords not matched", {
+        icon: "😢",
+        style: {
+          borderRadius: "10px",
+          background: "#b8291f",
+          color: "#fff",
+        },
+      });
+      return;
     } else {
       const user = {
         name,
         email,
         password,
       };
+      toast("account created succesfully", {
+        icon: "😊",
+        style: {
+          borderRadius: "10px",
+          background: "#223033",
+          color: "#fff",
+        },
+      });
       console.log(user);
+      dispatch(registerUser(user));
+      window.location.href = "/login";
     }
   }
 
@@ -24,6 +86,8 @@ const Registerscreen = () => {
     <div className={`container ${styles.login__screen}`}>
       <div className={`${styles.login__screen_margin}`}>
         <div className={`${styles.login__container}`}>
+          {loading && <Loading />}
+
           <div className={`${styles.drop}`}>
             <div className={`${styles.content}`}>
               <h2>Sign up</h2>
