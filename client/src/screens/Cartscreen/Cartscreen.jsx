@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Cartscreen.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, deleteFromCart } from "../../actions/cartActions";
+import Checkout from "../../components/Checkout";
 
 const Cartscreen = () => {
   const cartstate = useSelector((state) => state.cartReducer);
@@ -163,7 +164,7 @@ const Cartscreen = () => {
                     type="button"
                     className={`btn btn-lg btn-block ${styles.pizza__btn}`}
                   >
-                    Pay Now
+                    <Checkout subtotal={subtotal} />
                   </button>
                 </div>
               </div>
