@@ -1,4 +1,5 @@
 .loader__screen {
+  position: relative;
   margin-top: 5rem;
 }
 
@@ -48,8 +49,16 @@
     height: 30rem;
 }
 
-.success__message {
-  margin-top: 3rem;
+.success__message_h5 {
+  position: absolute;
+  background: rgb(104, 230, 104);
+  color: #000;
+  margin-top: 5rem;
+  width: 350px;
+  margin-left: -8rem;
+  border-radius: 30px;
+  padding: 5px;
+  user-select: none;
 }
 @keyframes loading {
   from {
