@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
-import {useDispatch} from 'react-redux'
+import { useDispatch } from "react-redux";
 import styles from "./Pizza.module.css";
 import { addToCart } from "../../actions/cartActions";
 
@@ -11,19 +11,18 @@ const Pizza = ({ pizza }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  function addtocart()
-  {
-    console.log('add to cart clicked')
-    dispatch(addToCart(pizza , quantity , varient))
+  function addtocart() {
+    dispatch(addToCart(pizza, quantity, varient));
   }
 
   return (
     <div className={`container ${styles.pizza__container}`}>
       <div className={`${styles.pizza__container} grid`}>
-        <article className={`${styles.pizza__card}`}>
-          <img  onClick={handleShow}
+        <article className={`${styles.pizza__card}`} key={pizza._id}>
+          <img
+            onClick={handleShow}
             src={pizza.image}
             alt=""
             className={`${styles.pizza__img}`}
@@ -42,8 +41,12 @@ const Pizza = ({ pizza }) => {
                   setvarient(e.target.value);
                 }}
               >
-                {pizza.varients.map((varient) => {
-                  return <option value={varient}>{varient}</option>;
+                {pizza.varients.map((varient, idx) => {
+                  return (
+                    <option value={varient} key={idx}>
+                      {varient}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -58,12 +61,15 @@ const Pizza = ({ pizza }) => {
                 }}
               >
                 {[...Array(10).keys()].map((x, i) => {
-                  return <option value={i + 1}>{i + 1}</option>;
+                  return (
+                    <option value={i + 1} key={i}>
+                      {i + 1}
+                    </option>
+                  );
                 })}
               </select>
             </div>
           </div>
-
 
           <div className={`flex-container ${styles.pizza__btnprice_container}`}>
             <div className="m-1 w-100">
@@ -79,21 +85,25 @@ const Pizza = ({ pizza }) => {
           </div>
         </article>
         <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{pizza.name}</Modal.Title>
-        </Modal.Header>
+          <Modal.Header closeButton>
+            <Modal.Title>{pizza.name}</Modal.Title>
+          </Modal.Header>
 
-        <Modal.Body>
-          <img src={pizza.image} className={`img-fluid ${styles.modal__img}`} style={{height:'400px'}}/>
-          <p>{pizza.description}</p>
-        </Modal.Body>
+          <Modal.Body>
+            <img
+              src={pizza.image}
+              className={`img-fluid ${styles.modal__img}`}
+              style={{ height: "400px" }}
+            />
+            <p>{pizza.description}</p>
+          </Modal.Body>
 
-        <Modal.Footer>
-          <button className="btn" onClick={handleClose}>
-            CLOSE
-          </button>
-        </Modal.Footer>
-      </Modal>
+          <Modal.Footer>
+            <button className="btn" onClick={handleClose}>
+              CLOSE
+            </button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </div>
   );

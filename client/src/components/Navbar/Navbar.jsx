@@ -50,7 +50,7 @@ const Navbar = () => {
                 </li>
                 <li className={`${styles.nav__item}`}>
                   <a href="/login" className={`${styles.nav__link}`}>
-                    <i class="bx bx-user-circle"></i>
+                    <i className="bx bx-user-circle"></i>
                     <span className={`${styles.nav__name}`}>
                       {currentUser.name.charAt(0).toUpperCase() + currentUser.name.slice(1, 7)}
                     </span>

@@ -11,7 +11,7 @@ const Cartscreen = () => {
   var costDelivery = 49;
   const dispatch = useDispatch()
   return (
-    <div classNameName={`container ${styles.cart__screen}`}>
+    <div className={`container ${styles.cart__screen}`}>
       <section
         className={`h-100 gradient-custom ${styles.cart__screen_section}`}
       >

@@ -5,6 +5,7 @@ import styles from "./Homescreen.module.css";
 import Pizza from "../../components/Pizza/Pizza";
 import Loading from "../../components/Decoration/Loading";
 import Error from "../../components/Decoration/Error";
+import Filter from "../../components/Filter/Filter";
 
 const Homescreen = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Homescreen = () => {
 
   return (
     <div className={`container ${styles.home__screen}`}>
+        <Filter/>
       <div className="row">
         {loading ? (
           <Loading/>
