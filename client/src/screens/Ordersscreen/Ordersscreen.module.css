@@ -1,3 +1,30 @@
 .order__screen {
     margin-top: 6rem;
 }
+
+.order__table_container {
+    margin-left: -.5rem;
+    width: 1500px;
+}
+
+thead tr {
+    background-color: rgb(56, 41, 16);
+    color: #fff;
+}
+
+.order__tbody{
+    background: rgba(41, 39, 39, 0.899);
+    color: #fff;
+    /* transition: all .5s; */
+
+}
+.order__tbody:hover {
+    
+    background: #fff;
+    color: rgba(41, 39, 39, 0.899);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.order__mail {
+    display: none;
+}
