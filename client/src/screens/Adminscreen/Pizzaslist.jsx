@@ -16,7 +16,15 @@ const Pizzaslist = () => {
   return (
     <div className={`container ${styles.all__small_screen}`}>
       <div>
-        <h2 style={{fontWeight: 'bold', fontSize: '30px', letterSpacing: '10px'}}>Pizzas List</h2>
+        <h2
+          style={{
+            fontWeight: "bold",
+            fontSize: "30px",
+            letterSpacing: "10px",
+          }}
+        >
+          Pizzas List
+        </h2>
         {loading && <Loading />}
         {error && <Error error="Something went wrong" />}
 
@@ -29,12 +37,20 @@ const Pizzaslist = () => {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody >
+          <tbody>
             {pizzas &&
               pizzas.map((pizza) => {
                 return (
                   <tr className={`${styles.trow__pizza_screen}`}>
-                    <td ><img src={pizza.image} alt="" height='50px' width='50px'/> {pizza.name}</td>
+                    <td>
+                      <img
+                        src={pizza.image}
+                        alt=""
+                        height="50px"
+                        width="50px"
+                      />{" "}
+                      {pizza.name}
+                    </td>
                     <td>
                       Small : {pizza.prices[0]["small"]} <br />
                       Medium : {pizza.prices[0]["medium"]} <br />
@@ -42,9 +58,16 @@ const Pizzaslist = () => {
                     </td>
                     <td>{pizza.category}</td>
                     <td className={`${styles.edit__del}`}>
-                      <i className={`bx bxs-edit ${styles.edit__btn_pizza_screen}`} ></i>
-                      <Link to={`/admin/editpizza/${pizza._id}`} onClick={()=>{dispatch(deletePizza(pizza._id))}}>
-                      <i className={`ri-delete-bin-5-line ${styles.delete__box__pizza_screen}`} ></i>
+                      <i
+                        className={` ri-delete-bin-5-line ${styles.delete__box__pizza_screen}`}
+                        onClick={() => {
+                          dispatch(deletePizza(pizza._id));
+                        }}
+                      ></i>
+                      <Link to={`/admin/editpizza/${pizza._id}`}>
+                        <i
+                          className={`bx bxs-edit ${styles.edit__btn_pizza_screen}`}
+                        ></i>
                       </Link>
                     </td>
                   </tr>

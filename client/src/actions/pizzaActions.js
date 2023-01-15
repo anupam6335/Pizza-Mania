@@ -12,6 +12,20 @@ export const getAllPizzas = () => async (dispatch) => {
   }
 };
 
+export const getPizzaById=(pizzaid)=>async dispatch=>{
+
+  dispatch({type:'GET_PIZZABYID_REQUEST'})
+
+  try {
+      const response = await axios.post('/api/pizzas/getpizzabyid' , {pizzaid})
+      console.log(response);
+      dispatch({type:'GET_PIZZABYID_SUCCESS' , payload : response.data})
+  } catch (error) {
+      dispatch({type:'GET_PIZZABYID_FAILED' , payload : error})
+  }
+
+}
+
 export const filterPizzas = (searchkey, category) => async (dispatch) => {
   dispatch({ type: "GET_PIZZAS_REQUEST" });
 
@@ -43,6 +57,19 @@ export const addPizza=(pizza)=>async dispatch=>{
       dispatch({type:'ADD_PIZZA_FAILED' , payload : error})
   }
 }
+
+export const editPizza=(editedpizza)=>async dispatch=>{
+  dispatch({type:'EDIT_PIZZA_REQUEST'})
+  try {
+      const response= await axios.post('/api/pizzas/editpizza' , {editedpizza})
+      console.log(response);
+      dispatch({type:'EDIT_PIZZA_SUCCESS'})
+      window.location.href='/admin/pizzaslist'
+  } catch (error) {
+      dispatch({type:'EDIT_PIZZA_FAILED' , payload : error})
+  }
+}
+
 
 export const deletePizza = (pizzaid) => async (dispatch) => {
   try {

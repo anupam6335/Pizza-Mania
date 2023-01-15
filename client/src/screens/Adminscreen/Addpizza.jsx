@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch , useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Adminscreen.module.css";
 import { addPizza } from "../../actions/pizzaActions";
 import { Error, Success, Loading } from "../../components/allComp";
@@ -12,10 +12,10 @@ const Addpizza = () => {
   const [description, setdescription] = useState("");
   const [category, setcategory] = useState("");
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const addpizzastate = useSelector(state=>state.addPizzaReducer)
-  const {success , error , loading} = addpizzastate
+  const addpizzastate = useSelector((state) => state.addPizzaReducer);
+  const { success, error, loading } = addpizzastate;
 
   function formHandler(e) {
     e.preventDefault();
@@ -41,10 +41,10 @@ const Addpizza = () => {
       >
         Add Pizzas
       </h2>
-      
-      {loading && (<Loading/>)}
-        {error && (<Error error='Something went wrong'/>)}
-        {success && (<Success success='New Pizza added successfully'/>)}
+
+      {loading && <Loading />}
+      {error && <Error error="Something went wrong" />}
+      {success && <Success success="New Pizza added successfully" />}
       <form onSubmit={formHandler} className={`${styles.add__pizza_form}`}>
         <input
           className={`form-control ${styles.add__pizza_input}`}
