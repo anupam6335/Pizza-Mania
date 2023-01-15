@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../../actions/userActions";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const cartstate = useSelector((state) => state.cartReducer);
   const userstate = useSelector((state) => state.loginUserReducer);
@@ -22,12 +22,6 @@ const Navbar = () => {
           {currentUser ? (
             <div className={`${styles.nav__menu}`} id="nav-menu">
               <ul className={`${styles.nav__list}`}>
-                <li className={`${styles.nav__item}`}>
-                  <a href="/" className={`${styles.nav__link}`}>
-                    <i className="bx bx-home-alt nav__icon"></i>
-                    <span className={`${styles.nav__name}`}>Home</span>
-                  </a>
-                </li>
 
                 <li className={`${styles.nav__item}`}>
                   <a href="/cart" className={`${styles.nav__link}`}>

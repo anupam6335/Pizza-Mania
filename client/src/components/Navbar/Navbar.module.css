@@ -133,6 +133,8 @@ img {
 .nav__logo {
   color: var(--title-color);
   font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
 }
 .nav__logo:hover {
   color: #E49D1A;
@@ -166,6 +168,7 @@ img {
   row-gap: 4px;
   color: var(--title-color);
   font-weight: 600;
+  cursor: pointer;
 }
 .nav__link:hover {
   /* color: var(--first-color); */

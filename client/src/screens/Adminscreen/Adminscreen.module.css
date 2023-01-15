@@ -1,0 +1,126 @@
+.home__screen {
+  margin-top: 5rem;
+  margin-left: 3rem;
+}
+
+.adminfunctions {
+  background: rgb(38, 40, 38);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  border-radius: 30px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-top: 15px;
+  width: 75rem;
+}
+
+.adminfunctions li {
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+
+.admin__name {
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
+  color: #fff;
+  background: crimson;
+  margin-left: 120px;
+}
+.trow__pizza_screen {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.trow__pizza_screen:hover {
+    color: #fff;
+    background: rgb(38, 31, 31);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.all__small_screen {
+  margin-top: 2.5rem;
+  margin-left: 3rem;
+}
+.edit__del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tbody__pizza_screen {
+  color: #fff;
+  background: rgb(95, 90, 90);
+}
+.edit__btn_pizza_screen {
+  font-size: 30px;
+  background: green;
+  cursor: pointer;
+}
+
+.delete__box__pizza_screen {
+  color: #fff;
+  background: red;
+  margin-left: 20px;
+  font-size: 30px;
+}
+.add__pizza_form {
+  padding: 2rem;
+  border-radius: 10px;
+  background: #323233;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.add__pizza_input,
+.add__pizza_input:focus {
+  padding: 10px;
+  outline: none;
+  border: none;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+
+.btn {
+  margin-top: 1rem;
+  align-items: center;
+  appearance: none;
+  background-color: rgb(44, 194, 59);
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.btn:focus {
+  box-shadow: #48484a 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #353536 0 -3px 0 inset;
+}
+
+.btn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2d2d30 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}

@@ -66,7 +66,7 @@ const Cartscreen = () => {
                               title="Remove item"
                               onClick={()=>{dispatch(deleteFromCart(item))}}
                             >
-                              <i className="bx bxs-box"></i>
+                              <i className="ri-delete-bin-5-line"></i>
                             </button>
                             {/* <!-- Data --> */}
                           </div>

@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import { Navbar } from "./components/allComp";
-import { Homescreen, Cartscreen, Registerscreen, Loginscreen, Ordersscreen } from "./screens/allScreens";
+import { Homescreen, Cartscreen, Registerscreen, Loginscreen, Ordersscreen, Adminscreen } from "./screens/allScreens";
 import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         <Route path="/register" exact component={Registerscreen} />
         <Route path="/login" exact component={Loginscreen} />
         <Route path='/orders' exact component={Ordersscreen}/>
+        <Route path='/admin' component={Adminscreen}/>
       </BrowserRouter>
     </div>
   );
