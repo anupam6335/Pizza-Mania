@@ -65,7 +65,7 @@ const Ordersscreen = () => {
                       {order._id}
                     </td>
                     <td>
-                      {order.isDelivered ? "Delivered ✅" : 'on the way'}
+                      {order.isDelivered ? "Delivered ✅" : 'on the way 🚵'}
                     </td>
                     <td>{order.orderAmount} /-</td>
                     <td>
