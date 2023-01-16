@@ -31,7 +31,7 @@ const Addpizza = () => {
       },
     };
 
-    console.log(pizza);
+    // console.log(pizza);
     dispatch(addPizza(pizza));
   }
   return (

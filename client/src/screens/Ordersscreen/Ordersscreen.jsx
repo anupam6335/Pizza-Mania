@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./Ordersscreen.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserOrders } from "../../actions/orderActions";
 import Loading from "../../components/Decoration/Loading";
 import Error from "../../components/Decoration/Error";
-import Success from "../../components/Decoration/Success";
+
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 const Ordersscreen = () => {
+  AOS.init({
+    duration:1100,
+  })
   const dispatch = useDispatch();
   const orderstate = useSelector((state) => state.getUserOrdersReducer);
   const { orders, error, loading } = orderstate;
@@ -35,7 +40,7 @@ const Ordersscreen = () => {
             {orders &&
               orders.map((order) => {
                 return (
-                  <tr  className={`${styles.order__tbody}`}>
+                  <tr  className={`${styles.order__tbody}`}  data-aos='fade-down'  >
                     <td>
                     {order.orderItems.map(item=>{
                       return <div class="d-flex align-items-center">

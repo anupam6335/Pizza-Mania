@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../actions/userActions";
 import Loading from "../../components/Decoration/Loading";
-import Success from "../../components/Decoration/Success";
-import Error from "../../components/Decoration/Error";
+// import Success from "../../components/Decoration/Success";
+// import Error from "../../components/Decoration/Error";
 import { toast } from "react-hot-toast";
 
 const Registerscreen = () => {
@@ -14,7 +14,7 @@ const Registerscreen = () => {
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
   const registerstate = useSelector((state) => state.registerUserReducer);
-  const { error, loading, success } = registerstate;
+  const {  loading } = registerstate;
   const dispatch = useDispatch();
   function register(e) {
     e.preventDefault();
@@ -51,7 +51,7 @@ const Registerscreen = () => {
       });
       return;
     }
-    else if (password != cpassword) {
+    else if (password !== cpassword) {
       // alert("passwords not matched");
       toast("passwords not matched", {
         icon: "😢",
@@ -76,7 +76,7 @@ const Registerscreen = () => {
           color: "#fff",
         },
       });
-      console.log(user);
+      // console.log(user);
       dispatch(registerUser(user));
       window.location.href = "/login";
     }

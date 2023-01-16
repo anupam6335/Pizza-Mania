@@ -3,8 +3,15 @@ import { Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import styles from "./Pizza.module.css";
 import { addToCart } from "../../actions/cartActions";
-
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 const Pizza = ({ pizza }) => {
+
+  AOS.init({
+    
+  })
+
+
   const [quantity, setquantity] = useState(1);
   const [varient, setvarient] = useState("small");
   const [show, setShow] = useState(false);
@@ -20,7 +27,7 @@ const Pizza = ({ pizza }) => {
   return (
     <div className={`container ${styles.pizza__container}`}>
       <div className={`${styles.pizza__container} grid`}>
-        <article className={`${styles.pizza__card}`} key={pizza._id}>
+        <article className={`${styles.pizza__card}`} key={pizza._id} data-aos='zoom-in'>
           <img
             onClick={handleShow}
             src={pizza.image}

@@ -10,7 +10,7 @@ export default function Checkout({ subtotal }) {
   const { loading, error, success } = orderstate;
   const dispatch = useDispatch();
   function tokenHander(token) {
-    console.log(token);
+    // console.log(token);
     dispatch(placeOrder(token, subtotal));
   }
 

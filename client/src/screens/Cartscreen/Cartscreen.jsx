@@ -3,8 +3,14 @@ import styles from "./Cartscreen.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, deleteFromCart } from "../../actions/cartActions";
 import Checkout from "../../components/Checkout";
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 
 const Cartscreen = () => {
+
+  AOS.init()
+
+
   const cartstate = useSelector((state) => state.cartReducer);
   const cartItems = cartstate.cartItems;
   var subtotal = cartItems.reduce((x, item) => x + item.price, 0);
@@ -18,8 +24,8 @@ const Cartscreen = () => {
         <div className="container py-5">
           <div className="row d-flex justify-content-center my-4">
             <div className="col-md-8">
-              <div className="card mb-4">
-                <div className="card-header py-3">
+              <div className="card mb-4" data-aos='fade-down'>
+                <div className="card-header py-3" >
                   <h5 className="mb-0">
                     {cartstate.cartItems.length} 🍕 Pizzas
                   </h5>
