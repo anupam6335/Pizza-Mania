@@ -30,6 +30,8 @@ const Filter = () => {
           <option value="veg">Veg</option>
           <option value="nonveg">Non Veg</option>
           <option value="panner">panner</option>
+          <option value="parathapizza">paratha pizza</option>
+          <option value="gourmetpizza">gourmet pizza</option>
         </select>
       </div>
       <button className={`${styles.search} ${styles.btn}`} onClick={()=>{dispatch(filterPizzas(searchkey , category))}}> Filter </button>
