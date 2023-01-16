@@ -30,13 +30,27 @@
   background: crimson;
   margin-left: 120px;
 }
-.trow__pizza_screen {
+.trow__pizza_screen{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .trow__pizza_screen:hover {
     color: #fff;
     background: rgb(38, 31, 31);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.trow__pizza_screens {
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.trow__pizza_screens:hover td{
+  color: #fff !important;
+  background: rgb(38, 31, 31);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.btn__deliver {
+  /* align-items: center; */
+  top: -1rem;
 }
 .all__small_screen {
   margin-top: 2.5rem;
