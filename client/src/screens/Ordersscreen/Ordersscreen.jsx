@@ -29,7 +29,7 @@ const Ordersscreen = () => {
               <th>Items</th>
               <th>Address</th>
               <th>Order Id</th>
-              {/* <th>status</th> */}
+              <th>status</th>
               <th>Amount</th>
               <th>Date</th>
               <th>Transaction Id</th>
@@ -64,9 +64,9 @@ const Ordersscreen = () => {
                     <td>
                       {order._id}
                     </td>
-                    {/* <td>
-                      {order.isDelivered}
-                    </td> */}
+                    <td>
+                      {order.isDelivered ? "Delivered ✅" : 'on the way'}
+                    </td>
                     <td>{order.orderAmount} /-</td>
                     <td>
                      {order.createdAt.substring(0,10)}
