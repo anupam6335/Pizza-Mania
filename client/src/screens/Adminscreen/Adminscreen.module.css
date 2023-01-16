@@ -18,6 +18,8 @@
 .adminfunctions li {
   font-weight: bold;
   letter-spacing: 1.2px;
+  margin-left: 82px;
+  margin-right: 82px;
 }
 
 .admin__name {

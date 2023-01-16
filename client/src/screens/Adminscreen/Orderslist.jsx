@@ -12,6 +12,7 @@ const Orderslist = () => {
   }, []);
   return (
     <div className={`container ${styles.all__small_screen}`}>
+       <h1 style={{ fontWeight: "bold", fontSize: "30px", letterSpacing: "10px" }}>Orders list</h1>
      <div>
       {loading && <Loading />}
       {error && <Error error="Something went wrong" />}
