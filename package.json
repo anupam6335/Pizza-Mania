@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "pizza delivery app",
   "main": "server.js",
+  "engines": {
+    "node": "18.12.1",
+    "npm" :"8.19.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "client-install": "npm install --prefix client",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
